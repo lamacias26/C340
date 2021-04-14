@@ -27,7 +27,7 @@ public class MySQLTranslator implements DBTranslatorInterface {
     private static final String db_name = "recipe_app";
     private static final String db_user = "root";
     //<editor-fold desc="private static final String db_password">
-    private static final String db_password = "Miaandquinnloveice100!";
+    private static final String db_password = "Recipestoinfinityspring2021";
     //</editor-fold>
 
 

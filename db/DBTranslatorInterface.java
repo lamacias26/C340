@@ -2,8 +2,7 @@ package db;
 /**
  * The DBConnectorInterface interface describes the methods that must be implemented for
  * any database class that is expected to work with this system.
- * The basic CRUD operations are detailed below, but more advanced features,
- * including loading by name, uuid, id or type can be added.
+ * The basic CRUD operations are detailed below
  */
 
 import java.util.HashMap;

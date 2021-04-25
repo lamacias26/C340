@@ -22,9 +22,11 @@ public class MySQLTranslator implements DBTranslatorInterface {
 
     // Connection Settings. Change these to connect to your database.
     // db_location is either "localhost", an IP address, or a URL.
-    private static final String db_location = "localhost";
+   // private static final String db_location = "localhost";
+    private static final String db_location = "35.232.56.229";
     private static final int db_port = 3306;
-    private static final String db_name = "recipe_app";
+   // private static final String db_name = "recipe_app";\
+    private static final String db_name = "recipesToInfinitydb";
     private static final String db_user = "root";
     //<editor-fold desc="private static final String db_password">
     private static final String db_password = "Recipestoinfinityspring2021";

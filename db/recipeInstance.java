@@ -2,10 +2,11 @@ package db;
 
 public class recipeInstance extends DataObject {
 
-    protected final String dataTable = "seasonal_produce";
+    protected final String dataTable = "fruits_veggies";
 
-    protected String januaryFruit = "";
-    protected String januaryVegetables = "";
+        protected String month = "";
+   // protected String januaryFruit = "";
+   /* protected String januaryVegetables = "";
     protected String februaryFruit = "";
     protected String februaryVegetables = "";
     protected String marchFruit = "";
@@ -27,20 +28,23 @@ public class recipeInstance extends DataObject {
     protected String novemberFruit = "";
     protected String novemberVegetables = "";
     protected String decemberFruit = "";
-    protected String decemberVegetables = "";
+    protected String decemberVegetables = ""; */
 
-    protected String createDate = "";
+  /*  protected String createDate = "";
     public String getCreateDate() {
         return createDate;
     }
     public void setCreateDate(String createDate) {
         this.createDate = createDate;
-    }
+    } */
 
-    public String getJanuaryFruit() { return januaryFruit; }
-    public void setJanuaryFruit(String _januaryFruit) { this.januaryFruit = _januaryFruit; }
+    public String getMonth(){ return month;}
+    public void setMonth(String _month){ this.month = _month;}
 
-    public String getJanuaryVegetables() { return januaryVegetables; }
+  //  public String getJanuaryFruit() { return januaryFruit; }
+   // public void setJanuaryFruit(String _januaryFruit) { this.januaryFruit = _januaryFruit; }
+
+  /*  public String getJanuaryVegetables() { return januaryVegetables; }
     public void setJanuaryVegetables(String _januaryVegetables) { this.januaryVegetables = _januaryVegetables; }
 
     public String getFebruaryFruit() { return februaryFruit; }
@@ -107,7 +111,7 @@ public class recipeInstance extends DataObject {
     public void setDecemberFruit(String _decemberFruit) { this.decemberFruit = _decemberFruit; }
 
     public String getDecemberVegetables() { return decemberVegetables; }
-    public void setDecemberVegetables(String _decemberVegetables) { this.decemberVegetables = _decemberVegetables; }
+    public void setDecemberVegetables(String _decemberVegetables) { this.decemberVegetables = _decemberVegetables; } */
 
 }
 

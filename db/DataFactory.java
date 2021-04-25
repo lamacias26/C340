@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public abstract class DataFactory {
 
-    protected final String dataTable = "seasonal_produce";
+    protected final String dataTable = "fruits_veggies";
 
     /**
      * This method dynamically iterates over the calling class and all parent classes

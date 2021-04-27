@@ -1,12 +1,12 @@
 package Models;
 /**
  * The MarketID class handles all functionality related to market details..
- * Last Updated: 4/7/2021
+ * Last Updated: 4/27/2021
  * @author Leslie Macias Magana
  */
 
 public class MarketID extends FarmersMarketAPIBaseClass{
-    protected String id;
+    public static String id;
 
     public void MarketID(){}
 
@@ -17,12 +17,12 @@ public class MarketID extends FarmersMarketAPIBaseClass{
     }
 
     // ================ GETTERS =================
-    private String getId(){
+    public String getId(){
         return id;
     }
 
     // ================ SETTERS =================
-    private void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

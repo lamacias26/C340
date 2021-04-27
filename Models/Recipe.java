@@ -2,7 +2,7 @@ package Models;
 
 /**
  * The recipe class handles all functionality related to recipe information.
- * Last Updated: 3/24/2021
+ * Last Updated: 4/27/2021
  * @author Leslie Macias Magana
  */
 
@@ -19,12 +19,12 @@ public class Recipe extends APIBaseClass{
     }
 
     // ================ GETTERS =================
-    private String getIngredient(){
+    public String getIngredient(){
         return this.ingredient;
     }
 
     // ================ SETTERS =================
-    private void setIngredient(String _ingredient){
+    public void setIngredient(String _ingredient){
         this.ingredient = _ingredient;
     }
 }

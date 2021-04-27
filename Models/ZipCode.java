@@ -2,7 +2,7 @@ package Models;
 
 /**
  * The ZipCode class handles all functionality related to finding markets by zipcode.
- * Last Updated: 4/7/2021
+ * Last Updated: 4/27/2021
  * @author Leslie Macias Magana
  */
 
@@ -19,12 +19,12 @@ public class ZipCode extends FarmersMarketAPIBaseClass{
     }
 
     //========= GETTERS ============
-    private String getZipcode(){
+    public String getZipcode(){
         return zipcode;
     }
 
     //======== SETTERS =============
-    private void setZipcode(String zipcode){
+    public void setZipcode(String zipcode){
         this.zipcode = zipcode;
     }
 

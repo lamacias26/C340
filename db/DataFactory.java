@@ -29,7 +29,7 @@ public abstract class DataFactory {
         Map<String,String> pairs = new HashMap<>();
         // Find out what the calling class is.
         Class<?> thisClass = this.getClass();
-        // Iterate up through the chain of inherited clases until we hit a generic Object class.
+        // Iterate up through the chain of inherited classes until we hit a generic Object class.
         while (!thisClass.getName().equals("java.lang.Object")) {
             // Demonstrates moving up the chain of objects/
             System.out.println(thisClass.getName());
@@ -189,7 +189,7 @@ public abstract class DataFactory {
      */
     public String getDataTable() throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         Class<?> thisClass = this.getClass();
-        Field field = thisClass.getDeclaredField("dataTable"); //******************************************
+        Field field = thisClass.getDeclaredField("dataTable");
         return field.get(this).toString();
     }
 
@@ -206,6 +206,7 @@ public abstract class DataFactory {
      * @param _data
      * @return
      */
+
     public DataObject loadByCondition(HashMap<String, String> _data) {
         try {
             // Given an empty object, this method fills this object with data from the database.

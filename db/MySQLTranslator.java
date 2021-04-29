@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -22,10 +23,8 @@ public class MySQLTranslator implements DBTranslatorInterface {
 
     // Connection Settings. Change these to connect to your database.
     // db_location is either "localhost", an IP address, or a URL.
-   // private static final String db_location = "localhost";
     private static final String db_location = "35.232.56.229";
     private static final int db_port = 3306;
-   // private static final String db_name = "recipe_app";\
     private static final String db_name = "recipesToInfinitydb";
     private static final String db_user = "root";
     //<editor-fold desc="private static final String db_password">
@@ -76,7 +75,6 @@ public class MySQLTranslator implements DBTranslatorInterface {
         }
         return newKey;
     }
-
 
     /**
      * This helper function runs the query given by the above method.
@@ -164,6 +162,12 @@ public class MySQLTranslator implements DBTranslatorInterface {
         return this.readObject(_keyValuePairs, _table, false);
     }
 
+
+    public ArrayList<FruitsVegetables> loadFruitsVeggies(Map<String,String> _keyValuePairs, String _table) {
+        // By default we do not load deleted object.
+        return this.readFruitsVeggies(_keyValuePairs, _table, false);
+    }
+
     /**
      * Same as above except allows the option of reading deleted objects from the database.
      * @param _keyValuePairs
@@ -172,47 +176,62 @@ public class MySQLTranslator implements DBTranslatorInterface {
      * @return
      */
     public HashMap<String, Object> readObject(Map<String,String> _keyValuePairs, String _table, boolean _deleted) {
+    return new HashMap<String,Object>();
+    }
+
+
+    public ArrayList<FruitsVegetables> readFruitsVeggies(Map<String,String> _keyValuePairs, String _table, boolean _deleted) {
         // Start the query.
         String query =  "SELECT * FROM " + _table + " WHERE ";
         // Initialize the condition string.
         String condition = "";
+
+
         // Iterate over map.
         for (Map.Entry<String, String> entry : _keyValuePairs.entrySet()){
             condition+= " `" + entry.getKey() + "` = \"" + entry.getValue() + "\" AND";
         }
+
         if (_deleted) {
             // Then we'll ignore the active=1 condition and just shed off the last AND
             condition = condition.substring(0, condition.length()-3);
+
+
         } else {
             // We'll add the condition that the object must be active.
             condition+= " `active` = 1";
+
         }
         // Combine the query with the condition.
         query = query + condition;
-        // Initialize a object to store the results.
-        HashMap<String, Object> returnData = new HashMap();
+
+
+
         ResultSet results = this.runQuery(query);
+        System.out.println(query);
         // Create a flag for judging if the result set is empty.
         boolean isEmpty = true;
+        // Initialize a object to store the results.
+        ArrayList<FruitsVegetables> fruits_veggies = new ArrayList<>();
+
         try {
             while (results.next()) {
-                isEmpty = false;
-                ResultSetMetaData data = results.getMetaData();
-                int count = data.getColumnCount();
-                for (int i = 1; i <= count; i++) {
-                    String columnName = data.getColumnName(i);
-                    returnData.put(columnName, results.getObject(i));
-                }
+                FruitsVegetables myFruit = new FruitsVegetables();
+                myFruit.setMonth(results.getString("month"));
+                myFruit.setType(results.getString("type"));
+                myFruit.setId(results.getInt("id"));
+                myFruit.setUuid(results.getString("uuid"));
+                myFruit.setName(results.getString("name"));
+                myFruit.makeActive();
+                fruits_veggies.add(myFruit);
             }
         } catch (SQLException ex) {
             Logger.getLogger(MySQLTranslator.class.getName()).log(Level.SEVERE, null, ex);
         }
         // Close the statement connection.
-        if (isEmpty) {
-            // No results were loaded, return null.
-            return null;
-        }
-        return returnData;
+
+
+        return fruits_veggies;
     }
 
 

@@ -48,6 +48,7 @@ public class DataStoreAdapter {
      * @throws java.lang.IllegalAccessException
      * @throws java.lang.NoSuchMethodException
      */
+
     public static DataObject readObect(Map <String, String> _map, String _table, String _class) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
         // The Connector object returns a Hashmap of name-value pairs.
         HashMap<String, Object> results = connector.readObject(_map, _table);

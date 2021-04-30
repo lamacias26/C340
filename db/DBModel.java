@@ -1,35 +1,39 @@
 package db;
 
-import javax.xml.crypto.Data;
-import javax.xml.crypto.dsig.keyinfo.KeyValue;
-import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
-public class DBModel{
+public class DBModel {
 
-    public static void main(String[] args) {
+
+    public static ArrayList<FruitsVegetables> JanuaryFruitMethod() {
         MySQLTranslator newSql = new MySQLTranslator();
-
         Map<String, String> fruit_january;
         fruit_january = new HashMap<>();
-        fruit_january.put("month","January");
+        fruit_january.put("month", "January");
         fruit_january.put("type", "fruit");
-
         ArrayList<FruitsVegetables> january_fruit = newSql.loadFruitsVeggies(fruit_january, "fruits_veggies");
-        for(FruitsVegetables thisFruit : january_fruit){
+        for (FruitsVegetables thisFruit : january_fruit) {
             System.out.println(thisFruit.getName());
         }
+        return january_fruit;
+    }
 
+    public static ArrayList<FruitsVegetables> FebruaryFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_february;
         fruit_february = new HashMap<>();
-        fruit_february.put("month","February");
+        fruit_february.put("month", "February");
         fruit_february.put("type", "fruit");
 
         ArrayList<FruitsVegetables> february_fruit = newSql.loadFruitsVeggies(fruit_february, "fruits_veggies");
-        for(FruitsVegetables thisFruit : february_fruit){
+        for (FruitsVegetables thisFruit : february_fruit) {
             System.out.println(thisFruit.getName());
         }
+        return february_fruit;
+    }
 
+    public static ArrayList<FruitsVegetables> MarchFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_march;
         fruit_march = new HashMap<>();
         fruit_march.put("month","March");
@@ -39,7 +43,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : march_fruit){
             System.out.println(thisFruit.getName());
         }
+        return march_fruit;
+    }
 
+    public static ArrayList<FruitsVegetables> AprilFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_april;
         fruit_april = new HashMap<>();
         fruit_april.put("month","April");
@@ -49,7 +57,10 @@ public class DBModel{
         for(FruitsVegetables thisFruit : april_fruit){
             System.out.println(thisFruit.getName());
         }
-
+           return april_fruit;
+    }
+    public static ArrayList<FruitsVegetables> MayFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_may;
         fruit_may = new HashMap<>();
         fruit_may.put("month","May");
@@ -59,7 +70,10 @@ public class DBModel{
         for(FruitsVegetables thisFruit : may_fruit){
             System.out.println(thisFruit.getName());
         }
-
+        return may_fruit;
+    }
+    public static ArrayList<FruitsVegetables> JuneFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_june;
         fruit_june = new HashMap<>();
         fruit_june.put("month","June");
@@ -69,7 +83,10 @@ public class DBModel{
         for(FruitsVegetables thisFruit : june_fruit){
             System.out.println(thisFruit.getName());
         }
-
+        return june_fruit;
+    }
+    public static ArrayList<FruitsVegetables> JulyFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_july;
         fruit_july = new HashMap<>();
         fruit_july.put("month","July");
@@ -79,7 +96,10 @@ public class DBModel{
         for(FruitsVegetables thisFruit : july_fruit){
             System.out.println(thisFruit.getName());
         }
-
+        return july_fruit;
+    }
+    public static ArrayList<FruitsVegetables> AugustFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_august;
         fruit_august = new HashMap<>();
         fruit_august.put("month","August");
@@ -89,7 +109,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : august_fruit){
             System.out.println(thisFruit.getName());
         }
+        return august_fruit;
+    }
 
+    public static ArrayList<FruitsVegetables> SeptemberFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_september;
         fruit_september = new HashMap<>();
         fruit_september.put("month","September");
@@ -99,7 +123,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : september_fruit){
             System.out.println(thisFruit.getName());
         }
+        return september_fruit;
+    }
 
+    public static ArrayList<FruitsVegetables> OctoberFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_october;
         fruit_october = new HashMap<>();
         fruit_october.put("month","October");
@@ -109,7 +137,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : october_fruit){
             System.out.println(thisFruit.getName());
         }
+        return october_fruit;
+    }
 
+    public static ArrayList<FruitsVegetables> NovemberFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_november;
         fruit_november = new HashMap<>();
         fruit_november.put("month","November");
@@ -119,7 +151,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : november_fruit){
             System.out.println(thisFruit.getName());
         }
+        return november_fruit;
+    }
 
+    public static ArrayList<FruitsVegetables> DecemberFruitMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> fruit_december;
         fruit_december = new HashMap<>();
         fruit_december.put("month","December");
@@ -129,7 +165,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : december_fruit){
             System.out.println(thisFruit.getName());
         }
+        return december_fruit;
+    }
 
+    public static ArrayList<FruitsVegetables> JanuaryVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_january;
         vegetable_january = new HashMap<>();
         vegetable_january.put("month","January");
@@ -139,7 +179,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : january_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return january_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> FebruaryVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_february;
         vegetable_february = new HashMap<>();
         vegetable_february.put("month","February");
@@ -149,7 +193,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : february_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return february_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> MarchVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_march;
         vegetable_march = new HashMap<>();
         vegetable_march.put("month","March");
@@ -159,7 +207,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : march_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return march_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> AprilVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_april;
         vegetable_april = new HashMap<>();
         vegetable_april.put("month","April");
@@ -169,7 +221,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : april_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return april_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> MayVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_may;
         vegetable_may = new HashMap<>();
         vegetable_may.put("month","May");
@@ -179,7 +235,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : may_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return may_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> JuneVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_june;
         vegetable_june = new HashMap<>();
         vegetable_june.put("month","June");
@@ -189,7 +249,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : june_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return june_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> JulyVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_july;
         vegetable_july = new HashMap<>();
         vegetable_july.put("month","July");
@@ -199,7 +263,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : july_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return july_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> AugustVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_august;
         vegetable_august = new HashMap<>();
         vegetable_august.put("month","August");
@@ -209,7 +277,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : august_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return august_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> SeptemberVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_september;
         vegetable_september = new HashMap<>();
         vegetable_september.put("month","September");
@@ -219,7 +291,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : september_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return september_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> OctoberVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_october;
         vegetable_october = new HashMap<>();
         vegetable_october.put("month","October");
@@ -229,7 +305,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : october_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return october_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> NovemberVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_november;
         vegetable_november = new HashMap<>();
         vegetable_november.put("month","November");
@@ -239,7 +319,11 @@ public class DBModel{
         for(FruitsVegetables thisFruit : november_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return november_vegetable;
+    }
 
+    public static ArrayList<FruitsVegetables> DecemberVegetableMethod() {
+        MySQLTranslator newSql = new MySQLTranslator();
         Map<String, String> vegetable_december;
         vegetable_december = new HashMap<>();
         vegetable_december.put("month","December");
@@ -249,5 +333,6 @@ public class DBModel{
         for(FruitsVegetables thisFruit : december_vegetable){
             System.out.println(thisFruit.getName());
         }
+        return december_vegetable;
     }
 }

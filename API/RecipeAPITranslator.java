@@ -12,7 +12,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import Models.Recipe;
+import java.util.ArrayList;
+
+import Models.*;
 
 public class RecipeAPITranslator implements RecipeApiInterface {
 
@@ -29,9 +31,10 @@ public class RecipeAPITranslator implements RecipeApiInterface {
      * @return
      */
     @Override
-    public Recipe loadRecipeByIngredient(String _ingredient) {
+    public ArrayList<Recipe> loadRecipeByIngredient(String _ingredient) {
         //Build URL String.
         String urlString =  callAction + "q=" + _ingredient + "&app_id=" + api_ID + "&app_key=" + RecipeAPITranslator.apiKey;
+        ArrayList<Recipe> recipeNames = new ArrayList<>();
         try {
             // Make the connection.
             URL url = new URL(RecipeAPITranslator.baseUrl + urlString);
@@ -70,13 +73,17 @@ public class RecipeAPITranslator implements RecipeApiInterface {
                     JSONObject obj_RecipeList = hitsArray.getJSONObject(i);
                     JSONObject recipe = obj_RecipeList.getJSONObject("recipe");
                     System.out.println("Recipe Name: " + recipe.getString("label"));
+                    String recipesNames = recipe.getString("label");
                     System.out.println("URL: " + recipe.getString("url"));
+                    String recipesUrl = recipe.getString("url");
+                    Recipe recipes = new Recipe(recipesNames, recipesUrl);
+                    recipeNames.add(recipes);
                 }
 
             }
         } catch (Exception ex) {
             System.out.println("Error:" + ex);
         }
-        return null;
+        return recipeNames;
     }
 }
